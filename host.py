@@ -43,12 +43,11 @@ def handle_request(request):
                 getIndexSeperator = requestUrl.index("?")
                 get_param = requestUrl[getIndexSeperator+1:]
                 requestUrl = requestUrl[:getIndexSeperator]
-                print(get_param)
                 # for getItemStr in getParamsArr:
                 #     if "=" not in getItemStr:
 
 
-            print(f"Request: {get_content[1]}")
+            # print(f"Request: {get_content[1]}")
             if requestUrl == "/sendInput":
                 return execute_input(get_param, headers, body)
             elif requestUrl == "/":

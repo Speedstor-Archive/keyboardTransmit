@@ -34,10 +34,6 @@ if __name__ == '__main__':
     commandLineThread = threading.Thread(target=commandLine, args=())
     commandLineThread.start()
 
-    print(sys.argv)
-    print(str(sys.argv))
-    print(sys.argv[0])
-
     if_host = None
     if len(sys.argv) < 2:
         printHelp()
@@ -54,7 +50,7 @@ if __name__ == '__main__':
         if len(sys.argv) >= 3:
             try:
                 port = sys.argv[2]
-                port = int(portOrAddress)
+                port = int(port)
             except (ValueError, IndexError):
                 print("Given port isn't a valid number, using default port 99.")
                 port = 99
